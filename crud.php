@@ -20,3 +20,28 @@ crud
         </button>
       </div>
       <?php session_unset(); } ?>
+
+<!-- ADD TASK FORM -->
+<div class="card card-body">
+        <form action="save_task.php" method="POST">
+          <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Titulo de la tarea" autofocus>
+          </div>
+          <div class="form-group">
+            <textarea name="description" rows="2" class="form-control" placeholder="Descripción de la tarea"></textarea>
+          </div>
+          <input type="submit" name="save_task" class="btn btn-success btn-block" value="Guardar tarea">
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Descripción</th>
+            <th>Fecha de creación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
