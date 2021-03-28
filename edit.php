@@ -15,7 +15,17 @@ if  (isset($_GET['id'])) {
   }
 }
 
-
+if (isset($_POST['update'])) {
+    $id = $_GET['id'];
+    $title= $_POST['title'];
+    $description = $_POST['description'];
+  
+    $query = "UPDATE task set title = '$title', description = '$description' WHERE id=$id";
+    mysqli_query($conn, $query);
+    $_SESSION['message'] = 'Tarea actualizada';
+    $_SESSION['message_type'] = 'warning';
+    header('Location: crud.php');
+  }
 
 
 ?>
